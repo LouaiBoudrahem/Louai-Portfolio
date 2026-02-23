@@ -13,17 +13,45 @@ const Home = () => {
 
   const [currentStage, setCurrentStage] = useState(1);
   const [isRotating, setIsRotating] = useState(false);
-  const [isPlayingMusic, setIsPlayingMusic] = useState(false);
+  const [isPlayingMusic, setIsPlayingMusic] = useState(true);
 
   useEffect(() => {
     if (isPlayingMusic) {
-      audioRef.current.play();
+      const playPromise = audioRef.current.play();
+
+      if (playPromise) {
+        playPromise.catch(() => {
+          setIsPlayingMusic(false);
+        });
+      }
+    } else {
+      audioRef.current.pause();
     }
 
     return () => {
       audioRef.current.pause();
     };
   }, [isPlayingMusic]);
+
+  useEffect(() => {
+    const resumeOnInteract = () => {
+      const playPromise = audioRef.current.play();
+
+      if (playPromise) {
+        playPromise
+          .then(() => setIsPlayingMusic(true))
+          .catch(() => {});
+      }
+    };
+
+    window.addEventListener("pointerdown", resumeOnInteract, { once: true });
+    window.addEventListener("keydown", resumeOnInteract, { once: true });
+
+    return () => {
+      window.removeEventListener("pointerdown", resumeOnInteract);
+      window.removeEventListener("keydown", resumeOnInteract);
+    };
+  }, []);
 
   const adjustBiplaneForScreenSize = () => {
     let screenScale, screenPosition;
