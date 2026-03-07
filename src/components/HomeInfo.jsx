@@ -33,7 +33,7 @@ const HomeInfo = ({ currentStage }) => {
     return (
       <div className='info-box'>
         <p className='font-medium text-center sm:text-xl'>
-          Created many systems over the years. <br /> Curious about the impact?
+          Designing systems for games and AI. <br /> See what I've created.
         </p>
 
         <Link to='/projects' className='neo-brutalism-white neo-btn'>
@@ -48,7 +48,7 @@ const HomeInfo = ({ currentStage }) => {
     return (
       <div className='info-box'>
       <p className='font-medium sm:text-xl text-center'>
-        Need a project done or looking for a dev? <br/> I'm just a few keystrokes away
+        Need a project done or looking for a dev? <br/> Contact me.
       </p>
 
       <Link to='/contact' className='neo-brutalism-white neo-btn'>

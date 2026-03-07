@@ -37,7 +37,19 @@ const Projects = () => {
             </div>
 
             <div className='mt-5 flex flex-col'>
-              <h4 className='text-2xl font-poppins font-semibold'>
+              {project.images && project.images.length > 0 && (
+                <div className='mt-4 grid gap-2' style={{ gridTemplateColumns: `repeat(${Math.min(project.images.length, 3)}, 1fr)` }}>
+                  {project.images.map((img, idx) => (
+                    <img
+                      key={idx}
+                      src={img}
+                      alt={`${project.name} screenshot ${idx + 1}`}
+                      className='w-full h-32 object-cover rounded-md'
+                    />
+                  ))}
+                </div>
+              )}
+              <h4 className='mt-4 text-2xl font-poppins font-semibold'>
                 {project.name}
               </h4>
               <p className='mt-2 text-slate-500'>{project.description}</p>

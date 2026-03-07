@@ -1,4 +1,4 @@
-import { meta, shopify, starbucks, tesla } from "../assets/images";
+import { hero, logo, meta, shopify, starbucks, tesla, gowImage } from "../assets/images";
 import {
     car,
     contact,
@@ -120,6 +120,7 @@ export const socialLinks = [
 export const projects = [
     {
         iconUrl: unity,
+        imageUrl: meta,
         theme: 'btn-back-red',
         name: 'Sekiro Like Combat and Traversal System',
         description: 'Developed a comprehensive combat and traversal system inspired by Sekiro, featuring fluid movement, precise combat mechanics, and engaging enemy AI.',
@@ -127,13 +128,16 @@ export const projects = [
     },
     {
         iconUrl: unity,
+        imageUrl: tesla,
         theme: 'btn-back-green',
         name: 'God of War Axe Throw System Replica',
         description: 'Created a replica of the axe-throwing mechanic from God of War, implementing realistic physics, aiming mechanics, and retrieval systems for an immersive gameplay experience.',
         link: 'https://github.com/Louaios/God-of-War-Axe-Throw-System-Replica',
+        images: [gowImage],
     },
     {
         iconUrl: python,
+        imageUrl: shopify,
         theme: 'btn-back-blue',
         name: 'AI Driven Personalized Nutrition Planner',
         description: 'Designed and built a mobile app for personalized nutrition planning, leveraging AI to provide tailored dietary recommendations.',
@@ -141,6 +145,7 @@ export const projects = [
     },
     {
         iconUrl: unity,
+        imageUrl: starbucks,
         theme: 'btn-back-pink',
         name: 'Augmented Reality Waste Filtering App',
         description: 'Developed an augmented reality application for waste filtering, enhancing environmental awareness and promoting sustainable practices.',
@@ -148,6 +153,7 @@ export const projects = [
     },
     {
         iconUrl: python,
+        imageUrl: hero,
         theme: 'btn-back-black',
         name: 'Shortest Path France Cities',
         description: 'Developed an application to find the shortest path between cities in France, optimizing travel routes and distances.',
@@ -155,6 +161,7 @@ export const projects = [
     },
     {
         iconUrl: nodejs,
+        imageUrl: logo,
         theme: 'btn-back-yellow',
         name: 'Blogging Web Site inspired by reddit',
         description: 'Created a blogging website inspired by Reddit, featuring user-generated content, voting systems, and community engagement functionalities.',

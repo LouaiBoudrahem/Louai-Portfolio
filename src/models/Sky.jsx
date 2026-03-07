@@ -2,10 +2,10 @@ import { useRef } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 
-import skyScene from "../assets/3d/sky.glb";
+import skyScene from "../assets/3d/Skybox.glb";
 
 // 3D Model from: https://sketchfab.com/3d-models/phoenix-bird-844ba0cf144a413ea92c779f18912042
-export function Sky({ isRotating }) {
+export function Sky({ isRotating, scale = [100, 100, 100], position = [0, 0, 0] }) {
   const sky = useGLTF(skyScene);
   const skyRef = useRef();
 
@@ -19,9 +19,7 @@ export function Sky({ isRotating }) {
   });
 
   return (
-    <mesh ref={skyRef}>
-      // use the primitive element when you want to directly embed a complex 3D
-      model or scene
+    <mesh ref={skyRef} scale={scale} position={position}>
       <primitive object={sky.scene} />
     </mesh>
   );
